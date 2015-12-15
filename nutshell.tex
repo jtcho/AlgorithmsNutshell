@@ -554,7 +554,7 @@
     %%%%%%%%%%%%%%%%%%
     %% GRAPH THEORY %%
     %%%%%%%%%%%%%%%%%%
-    {\large \underline{Graph Theory (CIS160 Review)}}\\
+    {\large \underline{Graph Theory Review}}\\
     
     $G = (V, E)$. Graphs consist of a vertex set $V$ and an edge set $E$. An edge $(u, v)$ connects two vertices $u, v$.\\
 
@@ -1066,7 +1066,7 @@
 
     {\large \underline{Huffman Encoding}}\\
 
-    Encoding scheme where more frequent characters have shortest encoding. A type of optimal \emph{prefix code} - no code word in a code system is the prefix of another codeword! (e.g. a case where `A' - 01 and `B' - 010 can never happen.)\\
+    Lossless encoding scheme where more frequent characters have shortest encoding. A type of optimal \emph{prefix code} - no code word in a code system is the prefix of another codeword! (e.g. a case where `A' - 01 and `B' - 010 can never happen.)\\
 
     Represented with Huffman tree, where left/right in traversal corresponds to a $0/1$ in the encoding.\\
 
@@ -1103,8 +1103,6 @@
 
     Compression of an input string can be performed by iterating through each character and finding the corresponding encoding in the encoding table. This runs in $\Theta(n)$ time, where $n$ is the length of the input.\\
 
-    \end{multicols*}
-
     \underline{Decompression}\\
 
     Decompression of an input string can be performed by walking down the Huffman tree for each encoded character and outputting a value whenever a leaf is reached. This also runs in $\Theta(n)$ time, as only one tree edge is traversed for each input character.\\
@@ -1113,9 +1111,17 @@
 
     {\large \underline{LZW Encoding}}\\
 
+    Lossless encoding scheme that builds an encoding table as it compresses/decompresses - registering successively larger substrings of the input with unused codes. Works well with highly redundant strings. Here we will only consider LZW encoding for binary, \emph{fixed-width} codes.\\
+
+    \underline{Compression}\\
+
+    \emph{Algorithm.} Initialize a dictionary $D$ to contain all possible single character strings as keys in sorted order. Each key is mapped to a code. Let $i=1$ denote the current position in the input $S$. Find the longest key $k$ in the dictionary that is a prefix of $S[i..]$ such that $S[i, i+j] = k$. Output $D[k]$. Increment $i$ by $j+1$. Add the string $k + S[i]$ as a new key in $D$ with the next available encoding. Repeat until $i > S.length$.\\
+
     {\large \underline{KMP Substring Search}}\\
     
     {\large \underline{Regular Expressions}}\\
+
+    \end{multicols*}
 
     \newpage
 
