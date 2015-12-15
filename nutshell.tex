@@ -1,12 +1,10 @@
 
 %%
-%% CIS121 Fall 2015 in a Nutshell
+%% Data Structures & Algorithms in a Nutshell
 %% @author jtcho - jonathan.t.cho@gmail.com
 %%
 %% Must be compiled using XeLaTeX.
 %% xelatex --shell-escape %file
-%%
-%% TODO: Shellsort!
 %%
 %% Have any questions/found a bug? Shoot me an email!
 
@@ -24,14 +22,14 @@
 
 \titleformat{\section}{\normalfont\LARGE\bfseries\centering}{\thesection}{1em}{}[{\titlerule[0.6pt]}]
 
-\section*{CIS121 in a ``Nutshell" (Fall 2015)}
+\section*{Data Structures \& Algorithms in a ``Nutshell"}
 \vspace{-20pt}
 
 %\begingroup
     \fontsize{10pt}{12pt}
 %\endgroup
 \begin{multicols*}{2}
-[{\small \begin{center}Comprehensive guide to all things CIS121. The information here is probably much more than you need to know for the exam. Extra sections that won't be tested are marked with asterisks.\end{center}}]
+[{\small \begin{center}Very comprehensive guide to algorithms and data structures as based on UPenn's CIS121 course.\end{center}}]
 
     %%%%%%%%%%%%%%%%%%%%
     %% TILDE NOTATION %%
@@ -85,7 +83,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%
     %% METHOD OF ITERATION %%
     %%%%%%%%%%%%%%%%%%%%%%%%%
-    {\large \underline{Method of Iteration for Recurrences*}}\\
+    {\large \underline{Method of Iteration for Recurrences}}\\
 
     Let $T(n) = a T(n/b) + f(n)$. Given base case $T(u) = c$ where $u = n/b^k$, $T(n)$ can be solved by simplifying $T(n) = f(n) + a f(\frac{n}{b}) + a^2 f(\frac{n}{b^2}) + \cdots + a^k f(\frac{n}{b^k}) + c\cdot a^{k+1}$.\\
 
@@ -665,7 +663,7 @@
     \endgroup
     \end{framed}
 
-    \underline{Parenthesis Theorem*}\\
+    \underline{Parenthesis Theorem}\\
     
     Note that a vertex $u$ is WHITE before time $u.d$, GRAY between times $u.d$ and $u.f$, and BLACK onwards. The discovery and finishing times for vertices have a \emph{parenthesis structure}. (e.g. if we denote discovery of a vertex $u$ with a `(u' and its finishing with a `u)', then the entire sequence of discoveries and finishings makes a balanced nested parenthetical expression).\\
 
@@ -675,7 +673,7 @@
     • the interval $[u.d, u.f]$ is contained entirely within the interval $[v.d, v.f]$, and $u$ is a descendant of $v$ in a DFS tree\\
     • the interval $[v.d, v.f]$ is contained entirely within the interval $[u.d, u.f]$, and $v$ is a descendant of $u$ in a DFS tree
 
-    \underline{Edge Classification*}\\
+    \underline{Edge Classification}\\
 
     Using DFS, we can also classify the edges of a graph into the following categories:\\
 
@@ -872,7 +870,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%
     %%% WIDEST PATH PROBLEM %%
     %%%%%%%%%%%%%%%%%%%%%%%%%%
-    {\large \underline{Widest Path Problem*}}\\
+    {\large \underline{Widest Path Problem}}\\
 
     Given two vertices $s, t$, find the maximum capacity path $s \leadsto t$ such that the smallest weight (lightest) edge on the path is maximal across all paths from $s$ to $t$.\\
 
@@ -940,7 +938,7 @@
 
     Each column represents the entries of $d$ at each iteration of the while loop in Dijkstra's algorithm, and each row depicts how the values of $d[i]$ change for the $i$th vertex. A bolded value indicates that we have just removed that vertex from the min-heap. The dashes indicate that the value of $d[v]$ for a particular vertex will no longer change in the algorithm.\\
 
-    \underline{Greedy Algorithms*.}\\
+    \underline{Greedy Algorithms.}\\
     
     Dijkstra's algorithm is a greedy algorithm, an algorithm that tries to solve a problem by making \emph{locally optimal} choices at each stage. A greedy algorithm may not necessarily produce an optimal solution (a global one).\\
 
