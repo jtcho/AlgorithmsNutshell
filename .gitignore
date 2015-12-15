@@ -1,0 +1,7 @@
+*.aux 
+*.listing 
+*.out 
+*.log 
+_minted-nutshell/
+.DS_Store
+images/*.xml
